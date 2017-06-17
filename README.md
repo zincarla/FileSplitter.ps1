@@ -4,6 +4,16 @@ Split large files using PowerShell
 ## Overview
 This script is intended to split and restore files without the need to download additional software.
 
+### Parameters
+#### LoadFile
+The full path and name of the file to load. If restoring a file, please select the first segment. "The one ending in '.0'.
+#### SaveFile
+The full path and name of the file to save. If not restoring, then the base file name. The sequential numbers will be added automatically.
+#### SegmentSize
+The size that each of the file segments should be in megabytes. (Default 1024 or 1Gb)
+#### ReadBuffer
+The buffer that data is temporarily stored in while the file is being read in bytes. You do not need to change this usually. (Default 4096 or 4Kb) 
+
 ## Split
 Assuming you have a file named OriginalFile.zip that you wanted to split into 4GB segments, you would run the follwing command. If it was an 8GB file, the script would output "C:\OriginalFile.zip.0" and "C:\OriginalFile.zip.1"
 PowerShell
